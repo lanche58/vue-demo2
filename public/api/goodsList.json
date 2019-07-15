@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "img": "../img/zipai.jpg",
+            "name": "自拍杆",
+            "price": "39.00"
+        },
+        {
+            "id": 2,
+            "img": "../img/zipai.jpg",
+            "name": "自拍杆1",
+            "price": "40.00"
+        },
+        {
+            "id": 3,
+            "img": "../img/zipai.jpg",
+            "name": "自拍杆2",
+            "price": "39.00"
+        },
+        {
+            "id": 4,
+            "img": "../img/zipai.jpg",
+            "name": "自拍杆3",
+            "price": "42.00"
+        }
+    ]
+}

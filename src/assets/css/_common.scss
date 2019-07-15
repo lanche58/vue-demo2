@@ -1,0 +1,27 @@
+// 浮动
+.fl{
+    float: left;
+}
+
+.fr{
+    float: right;
+}
+
+.clearfix{
+    &:after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+// 内容区域
+.container{
+    max-width: 1280px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+// 占位
+.mTop{
+    height: 80px;
+}

@@ -1,0 +1,70 @@
+.header{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 2000;
+    background: white;
+    height: 80px;
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
+    .logo{
+        margin-top: (80px - 72px) / 2;
+        img{
+            width: 49px;
+        }
+    }
+    .fr{
+        padding-top: (80px - 30px) / 2;
+        line-height: 30px;
+    }
+    .btn-login, .btn-logout{
+        float: left;
+        padding: 0 15px;
+        border: 1px solid $gray-cc;
+        border-radius: 3px;
+        line-height: 28px;
+        font-size: 12px;
+        transition: .3s;
+        &:hover{
+            border-color: $green-41;
+            background-color: $green-41;
+            color: white;
+        }
+    }
+    .btn-logout{
+        margin-left: 10px;
+    }
+    .btn-shopping-cart{
+        margin-left: 20px;
+        float: left;
+        position: relative;
+        .num{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -8px;
+            font-size: 12px;
+            line-height: 1;
+            color: $orange-fd;
+            text-align: center;
+            font-weight: bold;
+        }
+        .icon{
+            display: inline-block;
+            vertical-align: bottom;
+            color: $gray-66;
+            font-size: 20px;
+            transition: .3s;
+        }
+        &:hover{
+            .icon{
+                color: $green-41;
+            }
+        }
+    }
+    .name{
+        float: left;
+        margin-right: 20px;
+        color: $green-41;
+    }
+}
