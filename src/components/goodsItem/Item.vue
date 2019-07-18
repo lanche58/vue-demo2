@@ -1,9 +1,9 @@
 <template>
     <div class="goods-item">
-        <div class="pic"><img v-lazy="data.img" alt=""></div>
+        <div class="pic"><img v-lazy="`img/${data.productImage}`" alt=""></div>
         <div class="desc">
-            <p class="title">{{data.name}}</p>
-            <p class="price">¥ {{data.price}}</p>
+            <p class="title">{{data.productName}}</p>
+            <p class="price">¥ {{data.salePrice}}</p>
             <button type="button" class="btn-add-cart">加入购物车</button>
         </div>
     </div>
@@ -25,6 +25,9 @@ export default {
     }
     .pic{
         overflow: hidden;
+        img{
+            width: 100%;
+        }
     }
     .desc{
         padding: 10px 15px;

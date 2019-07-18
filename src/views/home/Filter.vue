@@ -1,8 +1,8 @@
 <template>
     <dl class="filter-nav">
         <dt>price:</dt>
-        <dd :class="{'act': current == 'all'}" @click="handleClick('all')"><span>All</span></dd>
-        <dd v-for="(item, index) of list" :key="item.id" @click="handleClick(index)" :class="{'act': current == index}"><span>{{`${item.firstPrice} - ${item.lastPrice}`}}</span></dd>
+        <dd :class="{act: current === -1}" @click="handleClick(-1)"><span>All</span></dd>
+        <dd v-for="(item, index) of list" :key="item.id" :class="{act: current === index}" @click="handleClick(index)"><span>{{`${item.firstPrice} - ${item.lastPrice}`}}</span></dd>
     </dl>
 </template>
 
@@ -32,12 +32,20 @@ export default {
                     lastPrice: "2000.00"
                 }
             ],
-            current: 'all'
+            current: -1
         }
     },
     methods: {
         handleClick(index) {
-            this.current = index;
+            let limits = {};
+            if (index === -1) {
+                this.current = -1;
+            } else {
+                this.current = index;
+                limits.minPrice = parseInt(this.list[index].firstPrice);
+                limits.maxPrice = parseInt(this.list[index].lastPrice); 
+            }
+            this.$emit('change', limits);
         }
     }
 }
@@ -57,6 +65,7 @@ export default {
         padding: 5px 0;
         line-height: 1.4;
         transition: padding .3s;
+        cursor: pointer;
         span{
             color: $gray-66;
         }
