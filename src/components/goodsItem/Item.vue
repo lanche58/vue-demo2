@@ -4,14 +4,19 @@
         <div class="desc">
             <p class="title">{{data.productName}}</p>
             <p class="price">¥ {{data.salePrice}}</p>
-            <button type="button" class="btn-add-cart">加入购物车</button>
+            <button type="button" class="btn-add-cart" @click="addCart(data.productId)">加入购物车</button>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    props: ['data']
+    props: ['data'],
+    methods: {
+        addCart(id) {
+            this.bus.$emit('add', id)
+        }
+    },
 }
 </script>
 

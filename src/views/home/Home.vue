@@ -52,7 +52,13 @@ export default {
         }
     },
     mounted() {  
-        this.getGoodsList()
+        this.getGoodsList();
+        this.bus.$on('add', msg => {
+            axios.post('/goods/addCart', {productId: msg})
+            .then(res => {
+                alert(res.data.msg);
+            })
+        });
     },
     methods: {
         getGoodsList(flag) {
@@ -113,7 +119,8 @@ export default {
                 this.maxPrice = -1;
             }
             this.getGoodsList();
-        }
+        },
+
     }
 }
 </script>

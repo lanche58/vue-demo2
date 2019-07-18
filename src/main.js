@@ -14,6 +14,8 @@ Vue.use(VueLazyload, {
 
 Vue.use(infiniteScroll);
 
+Vue.prototype.bus = new Vue();
+
 new Vue({
   render: h => h(App),
   router
