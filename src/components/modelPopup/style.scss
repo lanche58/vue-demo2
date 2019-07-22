@@ -1,0 +1,108 @@
+.popup-wrap{
+    .popup-main{
+        position: fixed;
+        z-index: 4000;
+        top: 50%;
+        left: 50%;
+        margin: -140px 0 0 -200px;
+        width: 400px;
+        height: 280px;
+        border-radius: 10px;
+        padding: 0 30px;
+        background: white; 
+        animation: fadeUp .6s .2s both;
+    }
+    .btn-close{
+        position: absolute;
+        z-index: 19;
+        top: 15px;
+        right: 15px;
+        line-height: 1;
+        color: $gray-99;
+        transition: .3s;
+        .icon{
+            font-size: 20px;
+            display: inline-block;
+            vertical-align: bottom;
+        }
+        &:hover{
+            color: $green-41;
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.btn-model-popup{
+    height: 40px;
+    width: 180px;
+    border: 1px solid $green-41;
+    color: $green-41;
+    letter-spacing: 3px;
+    transition: .3s;
+    &:hover{
+        background: $green-41;
+        color: white;
+    }
+}
+
+.btn-model-special{
+    background: $green-41;
+    color: white;
+    &:hover{
+        opacity: .8;
+    }
+}
+
+.no-login-tips{
+    .popup-main{
+        height: 220px;
+        margin-top: -110px;
+        padding-top: 50px;
+        text-align: center;
+    }
+    .msg{
+        margin-bottom: 50px;
+    }
+    .icon-check{
+        display: inline-block;
+        vertical-align: -2px;
+        margin-right: 10px;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 1px solid $green-41;
+        color: $green-41;
+        line-height: 22px;
+    }
+    .btn-wrap{
+        .btn-model-popup{
+            width: 140px;
+            margin: 0 5px;
+        }
+    }
+}
+
+.login-popup{
+    .popup-main{
+        padding-top: 30px;
+        height: 280px;
+        margin-top: -140px;
+    }
+    .title{
+        margin-bottom: 15px;
+        text-align: center;
+        line-height: 1.4;
+        font-size: 18px;
+        color: $green-41;
+        font-weight: bold;
+    }
+    .submit-wrap{
+        padding-top: 5px;
+    }
+    .error-tips{
+        padding-top: 5px;
+    }
+    .input-wrap{
+        margin-bottom: 15px;
+    }
+}

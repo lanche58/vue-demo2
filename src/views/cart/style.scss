@@ -1,0 +1,225 @@
+// cart
+.cart-bg{
+    position: relative;
+    height: 200px;
+    background: url('../../assets/img/banner.jpg');
+    &:after{
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(255,255,255,.2);
+    }
+}
+.cart-main{
+    position: relative;
+    margin-top: -50px;
+    padding: 0 35px;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 10px -2px 12px rgba(7,17,27,.2);
+}
+.no-product-add-tips{
+    text-align: center;
+    height: 370px;
+    padding-top: 110px;
+    .icon{
+        display: block;
+        line-height: 1;
+        color: $green-41;
+        font-size: 100px;
+    }
+    .msg{
+        margin-top: 20px;
+        font-size: 16px;
+        color: $gray-99;
+    }
+}
+.cart-wrap{
+    padding-bottom: 80px;
+}
+
+// list
+.cart-list{
+    li{
+        display: flex;
+        align-items: center;
+        padding: 20px 0;
+        &:first-child{
+            font-weight: bold;
+            color: $gray-33;
+        }
+        + li{
+            border-top: 1px solid $gray-cc;
+        }
+        &:not(:first-child){
+            .c2, .c4{
+                font-size: 16px;
+            }
+        }
+    }
+    .c1, .c2, .c3, .c4, .c5{
+        flex: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .c1{
+        width: 40%;
+        justify-content: left;
+    }
+    .c2{
+        width: 12%;
+    }
+    .c3{
+        width: 18%;
+    }
+    .c4{
+        width: 18%;
+    }
+    .c5{
+        width: 12%;
+    }
+    .icon-check{
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        border: 1px solid $gray-cc;
+        text-align: center;
+        line-height: 16px;
+        font-size: 14px;
+        &:before{
+            display: block;
+            transform: scale(.8);
+            opacity: 0;
+            transition: .3;
+        }
+        &.checked{
+            background: $orange-fd;
+            border-color: $orange-fd;
+            color: white;
+            &:before{
+                transform: none;
+                opacity: 1;
+            }
+        }
+    }
+    .pic{
+        margin-left: 20px;
+        width: 80px;
+        height: 80px;
+        border: 1px solid $gray-cc;
+        overflow: hidden;
+        img{
+            width: 100%;
+        }
+    }
+    .name{
+        flex: 1;
+        padding: 0 20px;
+        font-weight: bold;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: $gray-33;
+    }
+    .total-price{
+        color: $orange-fd;
+    }
+    .icon-iconset0213{
+        font-size: 22px;
+        transition: .3s;
+        &:hover{
+            color: $orange-fd;
+        }
+    }
+    .select-all{
+        flex: 1;
+        .icon{
+            margin-right: 20px;
+        }
+    }
+    .btn-settlement{
+        margin-left: 40px;
+    }
+    .all-price{
+        line-height: 1;
+        font-size: 12px;
+        color: $gray-33;
+        font-weight: bold;
+        .price{
+            margin-top: 5px;
+            display: block;
+            color: $orange-fd;
+            font-size: 22px;
+            font-weight: normal;
+        }
+    }
+}
+.btn-settlement{
+    width: 110px;
+    height: 44px;
+    border-radius: 5px;
+    background: $orange-fd;
+    color: white;
+    transition: .3s;
+    &:not(.disabled):hover{
+        opacity: .8;
+    }
+    &.disabled{
+        background: $gray-cc;
+        cursor: default;
+    }
+}
+.count-wrap{
+    display: flex;
+    width: 90px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid $gray-cc;
+    line-height: 28px;
+    overflow: hidden;
+    .num, .btn{
+        flex: 1;
+        text-align: center;
+    }
+    .btn{
+        position: relative;
+        background: $gray-f2;
+        transition: .3s;
+        &:before{
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -1px 0 0 -4px;
+            width: 8px;
+            height: 2px;
+            background: $gray-99;
+        }
+        &:not(.disabled):hover{
+            background: $gray-cc;
+        }
+        &.disabled{
+            background: $gray-fa;
+            cursor: default;
+            &:before, &:after{
+                background: $gray-cc;
+            }
+        }
+    }
+    .btn-add{
+        &:after{
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -4px 0 0 -1px;
+            height: 8px;
+            width: 2px;
+            background: $gray-99;
+        }
+    }
+}

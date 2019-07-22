@@ -27,6 +27,7 @@ export default {
     &:hover{
         box-shadow: 0 0 5px rgba(0,0,0,.2);
         transform: translateY(-10px);
+        border-color: $green-41;
     }
     .pic{
         overflow: hidden;

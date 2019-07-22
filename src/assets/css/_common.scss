@@ -25,3 +25,84 @@
 .mTop{
     height: 80px;
 }
+
+// 遮罩层
+.mask-layer{
+    position: fixed;
+    z-index: 3000;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, .6);
+    animation: fade .6s both;
+}
+
+// 错误提示
+.error-tips{
+    color: $orange-fd;
+}
+
+//   带icon input
+.input-wrap{
+    position: relative;
+    .inp{
+        width: 100%;
+        height: 40px;
+        padding-left: 35px;
+        border: 1px solid $gray-cc;
+        border-radius: 5px;
+        transition: .3s;
+        &:focus{
+            border-color: $green-41;
+        }
+    }
+    .icon{
+        position: absolute;
+        top: 0;
+        left: 10px;
+        line-height: 40px;
+        font-size: 18px;
+    }
+    &.error{
+        .inp{
+            border-color: $orange-fd;
+        }   
+    }
+}
+
+.submit-wrap{
+    .btn-submit{
+        width: 100%;
+        height: 40px;
+        border-radius: 5px;
+        background: $green-41;
+        color: white;
+        font-size: 16px;
+        transition: .3s;
+        &:hover{
+            opacity: .9;
+        }
+    }
+}
+
+// 动画
+@keyframes fadeUp {
+    0%{
+        transform: translateX(20%);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes fade {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

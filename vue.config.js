@@ -17,8 +17,5 @@ module.exports = {
   },
   devServer: {
     proxy: 'http://localhost:3000'
-  },
-  publicPath: './',
-  outputDir: 'dist',
-  assetsDir: 'img'
+  }
 }

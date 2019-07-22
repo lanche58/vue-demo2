@@ -5,6 +5,9 @@ import VueLazyload from 'vue-lazyload';
 import infiniteScroll from 'vue-infinite-scroll';
 import './assets/css/style.scss'
 import './assets/css/iconfont.css';
+import { currency } from './util/currency';
+
+Vue.filter('currency', currency);
 
 Vue.config.productionTip = false;
 

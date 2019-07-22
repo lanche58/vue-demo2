@@ -1,0 +1,78 @@
+.process-list{
+    display: flex;
+    li{
+        flex: 1;
+        &.current{
+            .name{
+                border-color: $orange-fd;
+                color: $orange-fd;
+                &:before{
+                    background: $orange-fd;
+                }
+            }
+        }
+    }
+    .name{
+        position: relative;
+        padding-bottom: 15px;
+        border-bottom: 2px solid $gray-cc;
+        color: $gray-99;
+        text-align: center;
+        transition: .3s;
+        &:before{
+            content: "";
+            position: absolute;
+            bottom: -7px;
+            left: 50%;
+            margin-left: -6px;
+            width: 12px;
+            height: 12px;
+            background: $gray-cc;
+            border-radius: 50%;
+            transition: .3s;
+        }
+    }
+}
+
+.address-wrap{
+    .process-list{
+        padding-top: 30px;
+    }
+}
+
+.address-title{
+    font-size: 16px;
+    color: $gray-33;
+    line-height: 1.4;
+    font-weight: bold;
+}
+
+.address-list{
+    margin-left: -30px;
+    li{
+        width: 25%;
+        float: left;
+        padding-left: 30px;
+    }
+}
+
+.address-item{
+    height: 160px;
+    padding: 0 20px;
+    background: white;
+    border: 2px solid $gray-cc;
+    box-shadow: 0 5px 8px rgba(0,0,0,.15);
+    .name{
+        font-size: 16px;
+        line-height: 1.4;
+        color: $gray-33;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .addr{
+        line-height: 24px;
+        height: 24px * 2;
+        overflow: hidden;
+    }
+}

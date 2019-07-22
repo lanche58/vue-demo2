@@ -17,6 +17,17 @@
                 </div>
             </div>
         </div>
+        <model-popup class="no-login-tips" @close="noLoginTips = false" v-if="noLoginTips">
+            <p class="msg">你尚未登录！</p>
+            <button type="button" @click="noLoginTips = false" class="btn-model-popup">关闭</button>
+        </model-popup>
+        <model-popup class="no-login-tips" @close="addedSuccessTips = false" v-if="addedSuccessTips">
+            <p class="msg"><i class="icon iconfont icon-check"></i>加入购物车成功</p>
+            <div class="btn-wrap">
+                <button type="button" class="btn-model-popup" @click="addedSuccessTips = false">继续购物</button>
+                <router-link to="/cart"><button type="button" class="btn-model-popup btn-model-special">查看购物车</button></router-link>
+            </div>
+        </model-popup>
     </div>
 </template>
 
@@ -28,6 +39,7 @@ import FilterNav from './Filter';
 import GoodsList from './List';
 import axios from 'axios';
 import { setTimeout } from 'timers';
+import ModelPopup from '@/components/modelPopup/model';
 export default {
     name: 'Home',
     components: {
@@ -35,7 +47,8 @@ export default {
         BreadCrumbNav,
         Sort,
         FilterNav,
-        GoodsList
+        GoodsList,
+        ModelPopup
     },
     data() {
         return {
@@ -48,15 +61,23 @@ export default {
             miPrice: -1,
             maPrice: -1,
             // 不出现加载动画
-            loading: false
+            loading: false,
+            noLoginTips: false,
+            addedSuccessTips: false
         }
     },
     mounted() {  
         this.getGoodsList();
-        this.bus.$on('add', msg => {
-            axios.post('/goods/addCart', {productId: msg})
+        this.bus.$on('add', id => {
+            axios.post('/goods/addCart', {productId: id})
             .then(res => {
-                alert(res.data.msg);
+                const data = res.data;
+                // 尚未登录
+                if (data.status == 10001) {
+                    this.noLoginTips = true
+                } else if (data.status == 0) {
+                    this.addedSuccessTips = true;
+                }
             })
         });
     },
@@ -120,7 +141,9 @@ export default {
             }
             this.getGoodsList();
         },
-
+        // closeHandle() {
+        //     this.noLoginTips = false
+        // }
     }
 }
 </script>
